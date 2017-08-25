@@ -12,4 +12,7 @@
 */
 
 
-Route::get('/', 'DeputadosController@index');
+Route::get('/{pagina}', 'DeputadosController@index')->name('home');
+Route::get('/', function() {
+	return redirect()->route('home', ['pagina' => 1]);
+});

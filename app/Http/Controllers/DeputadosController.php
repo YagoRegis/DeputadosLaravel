@@ -15,10 +15,14 @@ class DeputadosController extends Controller
 		$this->deputados = $deputados;
 	}
 
-    public function index()
+    public function index($pagina)
     {
-    	$deputados = $this->deputados->all();
+    	if(!isset($pagina)) {
+    		$pagina = 1;
+    	}
 
-    	return view('deputados.index', compact('deputados'));
+    	$deputados = $this->deputados->all($pagina);
+
+    	return view('deputados.index', compact('deputados', 'pagina'));
     }
 }

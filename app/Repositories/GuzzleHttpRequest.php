@@ -18,9 +18,11 @@ class GuzzleHttpRequest
 		$this->client = $client;
 	}
 
-	protected function get($url)
+	protected function get($url, $pagina)
 	{
-		$response = $this->client->request('GET', $url);
+		$response = $this->client->request('GET', $url, [
+			'query' => ['pagina' => $pagina]
+		]);
 
 		return json_decode($response->getBody()->getContents());
 	}
