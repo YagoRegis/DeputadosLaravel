@@ -4,6 +4,7 @@
 namespace App\Repositories;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Middleware;
 
 /**
 * 
