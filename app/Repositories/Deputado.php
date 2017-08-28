@@ -10,4 +10,9 @@ class Deputado extends GuzzleHttpRequest
 	{
 		return $this->get('deputados/', $pagina);
 	}
+
+	public function find($id)
+	{
+		return $this->getOne('deputados/', $id);
+	}
 }

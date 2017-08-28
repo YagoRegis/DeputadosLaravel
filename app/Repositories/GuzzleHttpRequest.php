@@ -27,4 +27,11 @@ class GuzzleHttpRequest
 
 		return json_decode($response->getBody()->getContents());
 	}
+
+	protected function getOne($url, $id) 
+	{
+		$response = $this->client->request('GET', $url.'/'.$id);
+
+		return json_decode($response->getBody()->getContents());	
+	}
 }

@@ -17,6 +17,7 @@
 				<img src="{{ $deputado->urlFoto }}" class="rounded-circle">
 				<h3> {{ $deputado->nome }} </h3>
 				<h4> {{ $deputado->siglaPartido }} - {{ $deputado->siglaUf }} </h4>
+				<a class="btn btn-primary" href="/deputados/deputado/{{ $deputado->id }}" role="button">Link</a>
 			</div>
 		@endforeach
 
@@ -24,10 +25,10 @@
 	<div class="container">
 		<nav aria-label="...">
 	  		<ul class="pagination pagination-lg">
-	  			<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/1" tabindex="/$pagina-1">First</a></li>
-	    		<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/{{ $pagina - 1 }}" tabindex="/$pagina-1">Previous</a></li>
-	    		<li class="page-item {{ ( $pagina == $last ) ? 'disabled' : ''}}"><a class="page-link" href="/{{ $pagina + 1 }}">Next</a></li>
-	    		<li class="page-item {{ ( $pagina == $last ) ? 'disabled' : ''}}"><a class="page-link" href="/{{ $last }}">Last</a>
+	  			<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/1" tabindex="/$pagina-1">First</a></li>
+	    		<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/{{ $pagina - 1 }}" tabindex="/$pagina-1">Previous</a></li>
+	    		<li class="page-item {{ ( $pagina == $last ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/{{ $pagina + 1 }}">Next</a></li>
+	    		<li class="page-item {{ ( $pagina == $last ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/{{ $last }}">Last</a>
 	    		</li>
 	  		</ul>
 		</nav>

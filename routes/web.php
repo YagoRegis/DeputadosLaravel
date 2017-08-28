@@ -12,7 +12,8 @@
 */
 
 
-Route::get('/{pagina}', 'DeputadosController@index')->name('home');
+Route::get('/deputados/{pagina}', 'DeputadosController@index');
+Route::get('/deputados/deputado/{id}', 'DeputadosController@show');
 Route::get('/', function() {
-	return redirect()->route('home', ['pagina' => 1]);
+	return view('home.index');
 });

@@ -25,4 +25,11 @@ class DeputadosController extends Controller
 
     	return view('deputados.index', compact('deputados', 'pagina'));
     }
+
+    public function show($id) 
+    {
+        $deputado = $this->deputados->find($id);
+
+        return view('deputados.show', compact('deputado', 'id'));
+    }
 }
