@@ -30,6 +30,20 @@ class DeputadosController extends Controller
     {
         $deputado = $this->deputados->find($id);
 
+        $deputado = [
+            'nome' => $deputado->dados->nomeCivil,
+            'dataNascimento' => date('d/m/Y', strtotime($deputado->dados->dataNascimento)),
+            'siglaUf' => $deputado->dados->ultimoStatus->siglaUf,
+            'siglaPartido' => $deputado->dados->ultimoStatus->siglaPartido,
+            'urlFoto' => $deputado->dados->ultimoStatus->urlFoto,
+            'telefone' => $deputado->dados->ultimoStatus->gabinete->telefone,
+            'email' => $deputado->dados->ultimoStatus->gabinete->email,
+            'situacao' => $deputado->dados->ultimoStatus->situacao,
+            'condicaoEleitoral' => $deputado->dados->ultimoStatus->condicaoEleitoral
+        ];
+
+
+
         return view('deputados.show', compact('deputado', 'id'));
     }
 }
