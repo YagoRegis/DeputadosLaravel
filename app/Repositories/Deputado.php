@@ -13,6 +13,7 @@ class Deputado extends GuzzleHttpRequest
 
 	public function find($id)
 	{
-		return $this->getOne('deputados/', $id);
+		$array = array();
+		return $this->get('deputados/'.$id, $array);
 	}
 }

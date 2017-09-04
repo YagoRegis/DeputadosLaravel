@@ -19,19 +19,12 @@ class GuzzleHttpRequest
 		$this->client = $client;
 	}
 
-	protected function get($url, $pagina)
+	protected function get($url, $array)
 	{
 		$response = $this->client->request('GET', $url, [
-			'query' => ['pagina' => $pagina]
+			'query' => $array
 		]);
 
 		return json_decode($response->getBody()->getContents());
-	}
-
-	protected function getOne($url, $id) 
-	{
-		$response = $this->client->request('GET', $url.'/'.$id);
-
-		return json_decode($response->getBody()->getContents());	
 	}
 }

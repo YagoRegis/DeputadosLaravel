@@ -14,6 +14,7 @@
 
 Route::get('/deputados/{pagina}', 'DeputadosController@index');
 Route::get('/deputados/deputado/{id}', 'DeputadosController@show');
+Route::get('/deputados/deputado/{id}/despesas/{pagina}', 'GastosController@index');
 Route::get('/', function() {
 	return view('home.index');
 });
