@@ -21,14 +21,11 @@
 					<h4> {{ $gasto['valorDocumento'] }}</h4>
 				</div>
 			</div>
-	<div class="card">
-  <div class="card-header p-3 mb-2 bg-danger text-white">
-    Featured
-  </div>
+	<div class="card text-white bg-dark mb-3">
+  <div class="card-header">Header</div>
   <div class="card-body">
-    <h4 class="card-title">Special title treatment</h4>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h4 class="card-title">Dark card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
 		@endforeach
