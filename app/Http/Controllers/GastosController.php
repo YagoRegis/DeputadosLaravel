@@ -19,7 +19,8 @@ class GastosController extends Controller
 
     public function index($id, $pagina)
     {
-    	$array = array('pagina' => $pagina);
+    	$array = array('pagina' => $pagina, 'ano' => date("Y"));
+        
     	$gastos = $this->gastos->all($id, $array);
         $deputado = $this->deputado->find($id);
 

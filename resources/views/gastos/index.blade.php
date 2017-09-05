@@ -2,6 +2,10 @@
 
 @section('content')
 	<div class="container">
+		 <div class="alert alert-danger alert-dismissable">
+    		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+    		<strong>Atenção!</strong> Somente os dados do ano corrente estão disponíveis.
+  		</div>
 		<h1> Gastos </h1>
 		<h4 class="display-4"> Deputado: {{ $deputado->dados->nomeCivil }} </h4>
 		@foreach ($links as $link)
@@ -11,6 +15,11 @@
 					preg_match('(\d+)', $matches[0][0], $matches2, PREG_OFFSET_CAPTURE);
 					$last = $matches2[0][0];
 				?>
+			@else
+				<?php
+					$last = 1;
+				?>
+				
 			@endif
 		@endforeach
 		@foreach ($gastos_final as $gasto)

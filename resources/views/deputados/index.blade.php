@@ -12,14 +12,18 @@
 				?>
 			@endif
 		@endforeach
+			<div class="card-columns">
 		@foreach ($deputados->dados as $deputado)
-			<div class="panel panel-default">
-				<img src="{{ $deputado->urlFoto }}" class="img-fluid">
-				<h3> {{ $deputado->nome }} </h3>
-				<h4> {{ $deputado->siglaPartido }} - {{ $deputado->siglaUf }} </h4>
-				<a class="btn btn-primary" href="/deputados/deputado/{{ $deputado->id }}" role="button">Link</a>
-			</div>
+				<div class="card">
+	    			<img class="img-fluid" src="{{ $deputado->urlFoto }}" alt="Card image cap">
+	    			<div class="card-block">
+	      				<h4 class="card-title"> {{ $deputado->nome }} </h4>
+	      				<p class="card-text"> {{ $deputado->siglaPartido }} - {{ $deputado->siglaUf }} </p>
+	      				 <a href="/deputados/deputado/{{ $deputado->id }}" class="btn btn-primary">Acesse</a>
+	    			</div>	
+				</div>
 		@endforeach
+			</div>
 
 	</div>
 	<div class="container">
