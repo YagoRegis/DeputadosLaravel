@@ -4,22 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\Gastos;
+use App\Repositories\Deputado;
 
 class GastosController extends Controller
 {
 	protected $gastos;
+    protected $deputado;
 
-	public function __construct(Gastos $gastos)
+	public function __construct(Gastos $gastos, Deputado $deputado)
 	{
 		$this->gastos = $gastos;
+        $this->deputado = $deputado;
 	}
 
     public function index($id, $pagina)
     {
     	$array = array('pagina' => $pagina);
     	$gastos = $this->gastos->all($id, $array);
-        $gastos_final = array();
+        $deputado = $this->deputado->find($id);
 
+        $gastos_final = array();
+        $links = $gastos->links;
         foreach ($gastos->dados as $gasto)
         {
             $temp =
@@ -32,6 +37,6 @@ class GastosController extends Controller
             array_push($gastos_final, $temp);
         }
 
-    	return view('gastos.index', compact('gastos_final', 'gastos', 'id', 'pagina'));
+    	return view('gastos.index', compact('gastos_final', 'links', 'deputado', 'pagina'));
     }
 }

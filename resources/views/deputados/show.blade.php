@@ -8,9 +8,9 @@
                <div class="panel-heading resume-heading">
                   <div class="row">
                      <div class="col-lg-12">
-                        <div class="col-xs-12 col-sm-4">
+                        <div class="col-xs-12 col-sm-3">
                            <figure>
-                              <img class="img-circle img-responsive" alt="" src="{{ $deputado['urlFoto'] }}">
+                              <img class="img-fluid" alt="" src="{{ $deputado['urlFoto'] }}">
                            </figure>
                            <div class="row">
                               <div class="col-xs-12 social-btns">
