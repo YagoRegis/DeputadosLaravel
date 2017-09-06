@@ -12,17 +12,19 @@
 				?>
 			@endif
 		@endforeach
-			<div class="card-columns">
-		@foreach ($deputados->dados as $deputado)
-				<div class="card">
-	    			<img class="img-fluid" src="{{ $deputado->urlFoto }}" alt="Card image cap">
-	    			<div class="card-block">
-	      				<h4 class="card-title"> {{ $deputado->nome }} </h4>
-	      				<p class="card-text"> {{ $deputado->siglaPartido }} - {{ $deputado->siglaUf }} </p>
-	      				 <a href="/deputados/deputado/{{ $deputado->id }}" class="btn btn-primary">Acesse</a>
-	    			</div>	
-				</div>
-		@endforeach
+			<div class="card-columns text-center">
+				@foreach ($deputados->dados as $deputado)
+					<div class="card">
+						<div class="card-header">
+		    				{{ $deputado->nome }}
+		  				</div>
+		    			<div class="card-body">
+		    				<img class="img-fluid" src="{{ $deputado->urlFoto }}" alt="Card image cap">
+		      				<p class="card-text"> {{ $deputado->siglaPartido }} - {{ $deputado->siglaUf }} </p>
+		      				<a class="btn btn-outline-danger" href="/deputados/deputado/{{ $deputado->id }}">Acesse</a>
+		    			</div>
+					</div>
+				@endforeach
 			</div>
 
 	</div>
