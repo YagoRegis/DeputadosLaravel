@@ -40,7 +40,13 @@ class DeputadosController extends Controller
             'telefone' => $deputado->dados->ultimoStatus->gabinete->telefone,
             'email' => $deputado->dados->ultimoStatus->gabinete->email,
             'situacao' => $deputado->dados->ultimoStatus->situacao,
-            'condicaoEleitoral' => $deputado->dados->ultimoStatus->condicaoEleitoral
+            'condicaoEleitoral' => $deputado->dados->ultimoStatus->condicaoEleitoral,
+            'escolaridade' => $deputado->dados->escolaridade,
+            'sala' => $deputado->dados->ultimoStatus->gabinete->sala,
+            'predio' => $deputado->dados->ultimoStatus->gabinete->predio,
+            'andar' => $deputado->dados->ultimoStatus->gabinete->andar,
+            'ufNascimento' => $deputado->dados->ufNascimento,
+            'municipioNascimento' => $deputado->dados->municipioNascimento
         ];
 
 

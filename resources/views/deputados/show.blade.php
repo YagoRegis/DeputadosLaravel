@@ -1,9 +1,56 @@
 @extends('layouts.master')
 
 @section('content')
-	<div class="container">
-		
-	<!-- resumt -->
+   <div class="container">
+      <div class="text-center">
+         <img src="{{ $deputado['urlFoto'] }}" class="rounded" alt="...">
+      </div>
+      <div class="list-group">
+         <div class="list-group-item">
+            <h5 class="mb-1">Nome</h5>
+            <p class="mb-1">{{ $deputado['nome'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Nascimento</h5>
+            <p class="mb-1">{{ $deputado['dataNascimento'] }} - {{ $deputado['municipioNascimento'] }}, {{ $deputado['ufNascimento'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Idade</h5>
+            <p class="mb-1">{{ $deputado['idade'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Partido - Estado</h5>
+            <p class="mb-1">{{ $deputado['siglaPartido'] }} - {{ $deputado['siglaUf'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Situação Eleitoral</h5>
+            <p class="mb-1">{{ $deputado['situacao'] }} - {{ $deputado['condicaoEleitoral'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Telefone do Gabinete</h5>
+            <p class="mb-1">{{ $deputado['telefone'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Email</h5>
+            <p class="mb-1">{{ $deputado['email'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Escolaridade</h5>
+            <p class="mb-1">{{ $deputado['escolaridade'] }}</p>
+         </div>
+         <div class="list-group-item">
+            <h5 class="mb-1">Gabinete</h5>
+            <p class="mb-1">Sala {{ $deputado['sala'] }}, no prédio {{ $deputado['predio'] }}, {{ $deputado['andar'] }}° andar</p>
+         </div>
+      </div>
+
+               <div class="bs-callout bs-callout-danger">
+                  <h4>Gastos</h4>
+                  <a class="btn btn-success" href="/deputados/deputado/{{ $deputado['id'] }}/despesas/1" role="button">Acesse os Gastos</a>
+               </div>
+
+
+   <!-- resumt -->
         <div class="panel panel-default">
                <div class="panel-heading resume-heading">
                   <div class="row">
@@ -46,10 +93,6 @@
                         </div>
                      </div>
                   </div>
-               </div>
-               <div class="bs-callout bs-callout-danger">
-                  <h4>Gastos</h4>
-                  <a class="btn btn-success" href="/deputados/deputado/{{ $deputado['id'] }}/despesas/1" role="button">Acesse os Gastos</a>
                </div>
                <div class="bs-callout bs-callout-danger">
                   <h4>Research Interests</h4>

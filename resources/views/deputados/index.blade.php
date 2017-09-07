@@ -30,7 +30,7 @@
 	</div>
 	<div class="container">
 		<nav aria-label="...">
-	  		<ul class="pagination pagination-lg">
+	  		<ul class="pagination justify-content-center">
 	  			<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/1" tabindex="/$pagina-1">First</a></li>
 	    		<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/{{ $pagina - 1 }}" tabindex="/$pagina-1">Previous</a></li>
 	    		<li class="page-item {{ ( $pagina == $last ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/{{ $pagina + 1 }}">Next</a></li>
