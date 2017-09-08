@@ -2,12 +2,15 @@
 
 @section('content')
 	<div class="container">
-		 <div class="alert alert-danger alert-dismissable">
-    		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+		 <div class="alert alert-danger alert-dismissable fade show">
+    		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     		<strong>Atenção!</strong> Somente os dados do ano corrente estão disponíveis.
   		</div>
-		<h1> Gastos </h1>
-		<h4 class="display-4"> Deputado: {{ $deputado->dados->nomeCivil }} </h4>
+		<h3> 
+			Gastos 
+			<small> {{ $deputado->dados->nomeCivil }} </small>
+		</h3>
+		
 		@foreach ($links as $link)
 			@if($link->rel == "last")
 				<?php
@@ -36,7 +39,7 @@
 	</div>
 	<div class="container">
 		<nav aria-label="...">
-	  		<ul class="pagination pagination-lg">
+	  		<ul class="pagination justify-content-center">
 	  			<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/deputado/{{ $deputado->dados->id }}/despesas/1" tabindex="/$pagina-1">First</a></li>
 	    		<li class="page-item {{ ( $pagina == 1 ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/deputado/{{ $deputado->dados->id }}/despesas/{{ $pagina - 1 }}" tabindex="/$pagina-1">Previous</a></li>
 	    		<li class="page-item {{ ( $pagina == $last ) ? 'disabled' : ''}}"><a class="page-link" href="/deputados/deputado/{{ $deputado->dados->id }}/despesas/{{ $pagina + 1 }}">Next</a></li>
