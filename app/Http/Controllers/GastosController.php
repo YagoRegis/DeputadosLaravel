@@ -19,13 +19,14 @@ class GastosController extends Controller
 
     public function index($id, $pagina)
     {
-    	$array = array('pagina' => $pagina, 'ano' => date("Y"));
+    	$array = array('pagina' => $pagina, 'ano' => date("Y"), 'ordenarPor' => 'numMes');
         
     	$gastos = $this->gastos->all($id, $array);
         $deputado = $this->deputado->find($id);
 
         $gastos_final = array();
         $links = $gastos->links;
+
         foreach ($gastos->dados as $gasto)
         {
             $temp =
